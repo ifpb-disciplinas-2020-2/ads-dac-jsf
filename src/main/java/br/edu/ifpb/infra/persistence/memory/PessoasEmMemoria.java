@@ -15,7 +15,7 @@ public class PessoasEmMemoria {
 
     private List<Pessoa> pessoas = new ArrayList<>();
 
-    public void adicionar(Pessoa pessoa) {
+    public void nova(Pessoa pessoa) {
         this.pessoas.add(pessoa);
     }
 

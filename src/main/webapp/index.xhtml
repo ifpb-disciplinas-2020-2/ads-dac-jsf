@@ -10,7 +10,8 @@
             <h:inputText value="#{controlador.pessoa.nome}"/>
             <!-- action um retorno em String -> caminho para redirecionar -->
             <h:commandButton value="exibir" action="#{controlador.redirecionar()}"/>
-            <h:commandButton value="listar" action="list"/>
+            <h:commandButton value="criar" action="pessoa/edit"/>
+            <h:commandButton value="listar" action="pessoa/list"/>
         </h:form>
     </h:body>
     

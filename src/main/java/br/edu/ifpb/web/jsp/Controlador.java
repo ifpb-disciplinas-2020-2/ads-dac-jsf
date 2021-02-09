@@ -37,7 +37,7 @@ public class Controlador implements Serializable {
     }
 
     public String adicionar() {
-        this.pessoas.adicionar(pessoa);
+        this.pessoas.nova(pessoa);
         this.pessoa = new Pessoa("");
         return null;
     }
