@@ -71,7 +71,7 @@ public class Dependente {
     public boolean nascimentoAnterior() {
         return this.dataDeNascimento == null
             || this.dataDeNascimento.isEqual(LocalDate.now())
-            || this.dataDeNascimento.isAfter(LocalDate.now());
+            || this.dataDeNascimento.isBefore(LocalDate.now());
     }
 
     @Override

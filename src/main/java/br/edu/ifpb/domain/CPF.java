@@ -6,6 +6,9 @@ public class CPF {
     private static final int TAMANHO = 11;
     private String numero;
 
+    public CPF() {
+    }
+
     public CPF(String numero) {
         this.numero = numero;
     }

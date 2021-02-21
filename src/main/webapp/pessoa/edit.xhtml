@@ -9,17 +9,27 @@
     <h:body>
         <h2> -- Cadastro de Pessoas -- </h2>
         <h:form>
-
-<!--            <h:messages layout="list"/>-->
+            <h:messages layout="list"/>
             <h:outputLabel for="nome" value="Nome" />
-            <h:inputText value="#{controlador.pessoa.nome}" id="nome"/>
+            <h:inputText value="#{controlador.pessoa.nome}" 
+                         id="nome"/>
             <h:outputLabel for="cpf" value="CPF" />
-            <h:inputText value="#{controlador.pessoa.cpf}" converter="cpf.converter" validator="cpf.validator" id="cpf"/>
+            <h:inputText value="#{controlador.pessoa.cpf}" 
+                         converter="converter.cpf" 
+                         validator="validator.cpf" 
+                         id="cpf"/>
             <h:message for="cpf" />
 
-            <h:selectOneMenu value="#{controlador.pessoa.dependente}">
-                <f:selectItems value="#{controlador.pessoa.dependentes()}" var="dep" itemLabel="#{dep.nome}" />
+            <h:selectOneMenu value="#{controlador.pessoa.dependente}" 
+                             converter="converter.Dependente"
+                             validator="validator.Dependente"
+                             id="dep">"
+                <f:selectItems value="#{controlador.todosOsDependentes()}"
+                               var="dep" itemLabel="#{dep.nome}" />
             </h:selectOneMenu>
+
+
+
 
             <h:commandButton value="adicionar" action="#{controlador.adicionar()}"/>
             <h:commandLink value="lista" action="list" immediate="true"/>

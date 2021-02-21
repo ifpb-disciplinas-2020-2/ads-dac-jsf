@@ -1,7 +1,8 @@
-package br.edu.ifpb.web.jsp;
+package br.edu.ifpb.web.jsf;
 
 //import javax.faces.bean.ManagedBean;
 //import javax.faces.bean.RequestScoped;
+import br.edu.ifpb.domain.Dependente;
 import br.edu.ifpb.domain.Pessoa;
 import br.edu.ifpb.domain.service.AlteraNomeDasPessoas;
 import br.edu.ifpb.infra.persistence.memory.PessoasEmMemoria;
@@ -31,8 +32,8 @@ public class Controlador implements Serializable {
         service.alteraNome(pessoa);
         pessoa.alterarNome();
         // redirecionando...
-//        return null; // fica na página original
-        return "home"; // encmainhar a requisição à página 
+        return null; // fica na página original
+//        return "home"; // encmainhar a requisição à página 
 //        return "home.xhtml?faces-redirect=true"; // nova requisição
     }
 
@@ -42,8 +43,11 @@ public class Controlador implements Serializable {
         return null;
     }
 
+    public List<Dependente> todosOsDependentes(){
+        return this.pessoas.todosOsDepentendes();
+    }
     public List<Pessoa> todasAsPessoas() {
-        return this.pessoas.todasAsPessoas();
+        return this.pessoas.todas();
     }
 
     public Pessoa getPessoa() {

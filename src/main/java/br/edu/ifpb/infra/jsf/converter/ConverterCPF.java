@@ -7,8 +7,8 @@ import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 
-@FacesConverter(value = "cpf.converter", forClass = CPF.class)
-public class CPFConverter implements Converter {
+@FacesConverter(value = "converter.cpf", forClass = CPF.class)
+public class ConverterCPF implements Converter {
     @Override
     public Object getAsObject(FacesContext context, UIComponent component, String value) {
         if(value == null){

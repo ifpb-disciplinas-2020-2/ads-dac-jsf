@@ -9,21 +9,25 @@
     <h:body>
         <h1>Listagem de Pessoas!</h1>
         <h:form>
-            <h:commandLink value="nova" action="edit" />
-            <h:dataTable var="p" value="#{controlador.todasAsPessoas()}">
+            <h:commandLink value="nova" action="edit.xhtml?faces-redirect=true" />
+            <h:dataTable var="p" value="#{controlador.todasAsPessoas()}" class="striped highlight">
                 <h:column>
                     <f:facet name="header">Id</f:facet>
-                    #{p.id}
+                        #{p.id}
                 </h:column>
                 <h:column>
                     <f:facet name="header">Nome</f:facet>
-                    #{p.nome}
+                        #{p.nome}
                 </h:column>
                 <h:column>
                     <f:facet name="header">CPF</f:facet>
 
-                                        #{p.cpf.formatado()}
+                    #{p.cpf.formatado()}
                 </h:column>
+                <!--                <h:column>
+                                        <h:commandButton value="x" action="{controladorDePessoas.excluir(p)}" 
+                                                         class="btn-floating"/>
+                                    </h:column>-->
             </h:dataTable>
         </h:form>
     </h:body>

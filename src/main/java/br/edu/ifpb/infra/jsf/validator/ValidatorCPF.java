@@ -10,8 +10,8 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 import java.util.Arrays;
 
-@FacesValidator("cpf.validator")
-public class CPFValidator implements Validator {
+@FacesValidator("validator.cpf")
+public class ValidatorCPF implements Validator {
     @Override
     public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {
         CPF cpf = (CPF) value;

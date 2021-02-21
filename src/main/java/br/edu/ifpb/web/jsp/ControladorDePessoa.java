@@ -1,4 +1,4 @@
-package br.edu.ifpb.web.jsf;
+package br.edu.ifpb.web.jsp;
 
 import br.edu.ifpb.domain.Pessoa;
 import java.io.IOException;

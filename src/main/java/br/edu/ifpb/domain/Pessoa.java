@@ -17,8 +17,12 @@ public class Pessoa {
     private Dependente dependente;
 
     public Pessoa(String nome) {
+        this(nome, "11111111111");
+    }
+    public Pessoa(String nome, String cpf) {
         this.nome = nome;
         this.id = System.currentTimeMillis();
+        this.cpf = new CPF(cpf);
     }
     public void alterarNome() {
         this.nome = this.nome.toUpperCase();
@@ -27,13 +31,7 @@ public class Pessoa {
         this.nome = this.nome.toLowerCase();
     }
 
-    public List<Dependente> dependentes(){
-        return Arrays.asList(
-              new Dependente("Job"),
-                new Dependente("Maria"),
-                new Dependente("João")
-        );
-    }
+
     public Dependente getDependente() {
         return dependente;
     }
