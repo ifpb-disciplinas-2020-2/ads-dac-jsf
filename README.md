@@ -8,6 +8,8 @@ Este projeto está estruturado com os assuntos relacionados ao JSF.
 
 *[Aula 2 - Conversores e Validadores ](https://github.com/ifpb-disciplinas-2020-2/ads-dac-jsf/commit/ba47c7cecdefc39cf47a7aacca2743b7e068be73)*
 
+*[Aula 3 - HTML 5 e templates ](https://github.com/ifpb-disciplinas-2020-2/ads-dac-jsf/commit/1447cd0e40d024f88ca61bac67e784dcfd81a49b)*
+
 
 # Atividade prática
 
