@@ -11,6 +11,7 @@ public class Dependente {
     private LocalDate dataDeNascimento;
 
     public Dependente() {
+        this("");
     }
 
     public Dependente(String nome) {
@@ -71,7 +72,7 @@ public class Dependente {
     public boolean nascimentoAnterior() {
         return this.dataDeNascimento == null
             || this.dataDeNascimento.isEqual(LocalDate.now())
-            || this.dataDeNascimento.isBefore(LocalDate.now());
+            || this.dataDeNascimento.isAfter(LocalDate.now());
     }
 
     @Override

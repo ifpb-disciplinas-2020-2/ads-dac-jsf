@@ -22,8 +22,7 @@ public class ConverterDependente implements Converter {
             return null;
         }
 
-        Dependente dep = this.service
-            .localizarDependenteComId(value);
+        Dependente dep = this.service.localizarDependenteComId(value);
         return dep;
 //return new Dependente(value,"");
 
@@ -40,6 +39,7 @@ public class ConverterDependente implements Converter {
         }
         Dependente dep = (Dependente) value;
         return dep.getUuid();
+//        return dep.getNome();
     }
 
 }

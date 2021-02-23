@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                template="../template.xhtml">
+    <ui:define name="centro">
+        <h2 class="header center orange-text"> Cadastro de Dependentes </h2>
+        <h:form>
+            <h:messages layout="list"/>
+            <h:outputLabel for="nome" value="Nome" />
+            <h:inputText value="#{controlador.dependente.nome}" id="nome"/>
+            <h:commandButton value="adicionar" action="#{controlador.adicionarDependente()}"/>
+
+            <h:dataTable var="dep" value="#{controlador.todosOsDependentes()}" class="striped highlight">
+                <h:column>
+                    <f:facet name="header">Id</f:facet>
+                    #{dep.nome}
+                </h:column>
+
+                <!--                <h:column>
+                                        <h:commandButton value="x" action="{controladorDePessoas.excluir(p)}"
+                                                         class="btn-floating"/>
+                                    </h:column>-->
+            </h:dataTable>
+        </h:form>
+    </ui:define>
+</ui:composition>
+

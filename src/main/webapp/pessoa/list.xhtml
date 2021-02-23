@@ -1,36 +1,36 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <h:head>
-        <title>Facelet Title</title>
-    </h:head>
-    <h:body>
-        <h1>Listagem de Pessoas!</h1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                template="../template.xhtml">
+    <ui:define name="centro">
+        <h1 class="header center orange-text">Listagem de Pessoas</h1>
         <h:form>
-            <h:commandLink value="nova" action="edit.xhtml?faces-redirect=true" />
-            <h:dataTable var="p" value="#{controlador.todasAsPessoas()}" class="striped highlight">
+            <h:commandLink value="nova" action="edit.xhtml?faces-redirect=true"/>
+            <h:dataTable var="pessoa" value="#{controlador.todasAsPessoas()}" class="striped highlight">
                 <h:column>
                     <f:facet name="header">Id</f:facet>
-                        #{p.id}
+                    #{pessoa.id}
                 </h:column>
                 <h:column>
                     <f:facet name="header">Nome</f:facet>
-                        #{p.nome}
+                    #{pessoa.nome}
                 </h:column>
                 <h:column>
                     <f:facet name="header">CPF</f:facet>
-
-                    #{p.cpf.formatado()}
+                    #{pessoa.cpf.formatado()}
                 </h:column>
-                <!--                <h:column>
-                                        <h:commandButton value="x" action="{controladorDePessoas.excluir(p)}" 
-                                                         class="btn-floating"/>
-                                    </h:column>-->
+                <h:column>
+                    <h:commandButton value="x" action="#{controlador.excluir(pessoa)}" class="btn"/>
+                </h:column>
+                <h:column>
+                    <h:commandButton value="editar" action="#{controlador.editar(pessoa)}" class="btn"/>
+                </h:column>
             </h:dataTable>
         </h:form>
-    </h:body>
-
-</html>
+    </ui:define>
+</ui:composition>
 

@@ -22,7 +22,7 @@ public class ValidatorDependente implements Validator {
         Dependente dep = (Dependente) value;
 
         if (dep.naoValido()) {
-            FacesMessage facesMessage = new FacesMessage("dep inválido");
+            FacesMessage facesMessage = new FacesMessage("valor inválido para o dependente");
             throw new ValidatorException(facesMessage);
         }
     }

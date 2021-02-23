@@ -31,6 +31,9 @@ public class Pessoa {
         this.nome = this.nome.toLowerCase();
     }
 
+    public static Pessoa fake(){
+        return new Pessoa("fake");
+    }
 
     public Dependente getDependente() {
         return dependente;

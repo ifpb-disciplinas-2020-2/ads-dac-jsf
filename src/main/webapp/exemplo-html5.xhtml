@@ -16,12 +16,12 @@
             </span>
         </nav>
         <div id="central">
-            <h:messages/>
+        <!--<h:messages/> -->
             <form jsf:id="form" jsf:prependId="false">
                 <input type="text" class="campo" 
                        jsf:value="#{controlador.pessoa.nome}" 
                        placeholder="Digite o nome" />
-                <input type="text" class="campo" 
+                <input type="text" class="campo"
                        jsf:value="#{controlador.pessoa.cpf}"
                        placeholder="Digite o cpf"  
                        jsf:validator="validator.cpf"
@@ -32,5 +32,6 @@
         <footer>
             <div id="rodape">IFPB</div>
         </footer>
+
     </body>
 </html>

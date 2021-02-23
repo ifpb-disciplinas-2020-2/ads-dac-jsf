@@ -18,7 +18,11 @@ public interface Pessoas extends Serializable {
 
     public void atualizar(Pessoa pessoa);
 
+    public Pessoa localizarPessoaComId(long id);
+
     public List<Dependente> todosOsDepentendes();
 
     public Dependente localizarDependenteComId(String uuid);
+
+    public void novo(Dependente dependente);
 }
